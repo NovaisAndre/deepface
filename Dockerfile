@@ -7,6 +7,9 @@ LABEL org.opencontainers.image.source https://github.com/serengil/deepface
 RUN mkdir -p /app && chown -R 1001:0 /app
 RUN mkdir /app/deepface
 
+# download vgg_face_weights.h5
+RUN mkdir -p /root/.deepface/weights && \
+    wget https://github.com/serengil/deepface_models/releases/download/v1.0/vgg_face_weights.h5 -P /root/.deepface/weights/
 
 
 # -----------------------------------
